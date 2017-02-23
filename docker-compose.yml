@@ -1,0 +1,14 @@
+version: '2'
+services:
+  tweetmap:
+    image: ulexus/meteor
+    restart: unless-stopped
+    container_name: tweetmap
+    ports:
+      - "3001:80"
+    env_file:
+      - ./auth.env
+    environment:
+      - ROOT_URL=http://localhost
+      - MONGO_URL=none
+      - REPO=https://github.com/rooch84/tweetmap.git  
